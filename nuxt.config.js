@@ -23,24 +23,41 @@ export default {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/proxy'
   ],
+  proxy: [
+    [
+      '/api',{
+        // target: 'http://localhost:9000',
+        target: 'https://www.easy-mock.com/mock/5d1cbbbabc17b4422c51d343/txn513nuxtdemo',
+        changeOrigin: true,
+        pathRewrite: { '^/api' : '/' }
+      }
+    ]
+  ],
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+  },
   /*
   ** Build configuration
   */
   build: {
-    transpile: [/^element-ui/],
     /*
     ** You can extend webpack config here
     */

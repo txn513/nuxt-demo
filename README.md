@@ -1,6 +1,6 @@
-# nuxt-demo
+# nuxt-demo2
 
-> My premium Nuxt.js project
+> My fine Nuxt.js project
 
 ## Build Setup
 
